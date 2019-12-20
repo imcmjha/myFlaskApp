@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>Articles</h1>
+<div class="card-columns">
+  {% for article in articles %}
+    <a class="card gotoArticle" href="/article/{{article.id}}" style="cursor: pointer;">
+      <div class="card-body">
+        <p>{{article.title }}</p>
+        by <span class="badge badge-primary badge-pill">{{article.name}}</span>
+      </div>
+    </a>
+  {% endfor %}
+</div>
+<script>
+  document.querySelectorAll('.gotoArticle').forEach(element => element.onclick = function(t){
+    location.href = `/article/${ t.target.dataset.id }`
+  })
+</script>
+{% endblock %}

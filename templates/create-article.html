@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="row">
+  <div class="col-sm-6 offset-sm-3 jumbotron">
+    <h3>Article</h3>
+    {% from 'includes/formhelopers.html' import render_field %}
+    <form action="{{action}}" method="POST">
+      <div class="form-group">
+        {{ render_field(form.title, class_='form-control') }}
+      </div>
+      <div class="form-group">
+        {{ render_field(form.body, class_='form-control', id="editor", row=10) }}
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Create Article">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

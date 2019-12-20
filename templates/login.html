@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="row">
+  <div class="col-sm-6 offset-sm-3 jumbotron">
+    <h3>Login</h3>
+    {% from 'includes/formhelopers.html' import render_field %}
+    <form action="/login" method="POST">
+      <div class="form-group">
+        {{ render_field(form.username, class_='form-control') }}
+      </div>
+      <div class="form-group">
+        {{ render_field(form.password, class_='form-control') }}
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Login">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

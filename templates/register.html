@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="row">
+  <div class="col-sm-6 offset-sm-3 jumbotron">
+    <h3>Registration form</h3>
+    {% from 'includes/formhelopers.html' import render_field %}
+    <form action="/register" method="POST">
+      <div class="form-group">
+        {{ render_field(form.name, class_='form-control') }}
+      </div>
+      <div class="form-group">
+        {{ render_field(form.username, class_='form-control') }}
+      </div>
+      <div class="form-group">
+        {{ render_field(form.email, class_='form-control') }}
+      </div>
+      <div class="form-group">
+        {{ render_field(form.password, class_='form-control') }}
+      </div>
+      <div class="form-group">
+        {{ render_field(form.confirm, class_='form-control') }}
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Register">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
